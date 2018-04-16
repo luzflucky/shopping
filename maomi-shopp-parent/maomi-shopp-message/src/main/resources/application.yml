@@ -1,0 +1,32 @@
+server:
+  port: 8763
+  context-path: /message
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://39.106.58.46:8761/eureka/
+spring:
+  application:
+    name: message
+  activemq:
+    broker-url: tcp://localhost:61616
+    in-memory: true
+    pool:
+      enabled: false
+  mail:
+    host: smtp.163.com
+    username: luzflucky@163.com
+    password: luckymao123
+    enable:  true
+    smtp:
+      auth: true
+    starttls:
+      enable: true
+      required: true
+msg:
+  subject: 发送给帅哥邮件
+  text: 帅哥帅哥你真帅
+
+   
+ 
+  

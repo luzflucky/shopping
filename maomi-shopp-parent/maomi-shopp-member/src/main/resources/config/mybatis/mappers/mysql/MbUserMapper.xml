@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.maomi.mapper.MbUserMapper">
+  <resultMap id="BaseResultMap" type="com.maomi.domain.MbUser">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="created" jdbcType="TIMESTAMP" property="created" />
+    <result column="updated" jdbcType="TIMESTAMP" property="updated" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, username, password, phone, email, created, updated,openId
+  </sql>
+  <!-- 使用用户id查询信息 -->
+  <select id="queryUserById" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from mb_user
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  
+  <!-- 使用帐号和密码查询用户信息 -->
+  <select id="queryUserByLogin" parameterType="com.maomi.domain.MbUser" resultMap="BaseResultMap">
+  	select
+  	<include refid="Base_Column_List" />
+  	from mb_user
+  	where username = #{username} and password = #{password}
+  </select>
+  
+  <!-- 根据openId查询用户信息 -->
+  <select id="queryUserByOpenId" parameterType="String" resultMap="BaseResultMap">
+  	select
+  	<include refid="Base_Column_List" />
+  	from mb_user
+  	where openId = #{openId}
+  </select>
+  
+  <!-- 新增用户信息 -->
+  <insert id="insertMbUser" parameterType="com.maomi.domain.MbUser">
+    insert into mb_user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="username != null">
+        username,
+      </if>
+      <if test="password != null">
+        password,
+      </if>
+      <if test="phone != null">
+        phone,
+      </if>
+      <if test="email != null">
+        email,
+      </if>
+        created,
+        updated,
+      <if test="openId != null">
+      	openId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        #{email,jdbcType=VARCHAR},
+      </if>
+      sysdate(),
+      sysdate()
+      <if test="openId != null">
+        #{openId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  
+  <!-- 更新用户openId -->
+  <update id="updateUserOpenId" parameterType="com.maomi.domain.MbUser">
+  	update mb_user
+  	set openId = #{openId}
+  	where id = #{id}
+  </update>
+  
+  <update id="updateByPrimaryKeySelective" parameterType="com.maomi.domain.MbUser">
+    update mb_user
+    <set>
+      <if test="username != null">
+        username = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="created != null">
+        created = #{created,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updated != null">
+        updated = #{updated,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+
+</mapper>
