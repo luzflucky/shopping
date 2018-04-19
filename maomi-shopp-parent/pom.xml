@@ -158,5 +158,6 @@
 		<module>maomi-shopp-member</module>
 		<module>maomi-shopp-message</module>
 		<module>maomi-shopp-web</module>
+		<module>maomi-shopp-pay</module>
 	</modules>
 </project>

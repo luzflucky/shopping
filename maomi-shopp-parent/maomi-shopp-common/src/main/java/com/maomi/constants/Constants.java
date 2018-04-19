@@ -26,8 +26,12 @@ public interface Constants {
 	String CONTENT = "content";
 	// token member
 	String MEMBER_TOKEN = "member";
+	// token pay
+	String PAY_TOKEN = "pay";
 	// username
 	String USER_NAME = "username";
+	// payInfo
+	String PAY_INFO_HTML = "payInfoHtml";
 	// token有效期
 	Long TOKEN_TIME = (long) (60*60*24*30);
 	// 响应请求成功code
@@ -38,4 +42,6 @@ public interface Constants {
 	Integer HTTP_RES_CODE_500 = 500;
 	// cookie token time
 	Integer COOKIE_TOKEN_TIME = 60*60*24*30;
+	// pay token time
+	Long PAY_TOKEN_TIME = (long) 15*60;
 ;}

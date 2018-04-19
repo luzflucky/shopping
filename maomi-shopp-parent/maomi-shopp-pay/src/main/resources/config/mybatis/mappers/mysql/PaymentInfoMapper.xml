@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.maomi.mapper.PaymentInfoMapper">
+  <resultMap id="BaseResultMap" type="com.maomi.domain.PaymentInfo">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="userid" jdbcType="INTEGER" property="userid" />
+    <result column="typeid" jdbcType="INTEGER" property="typeid" />
+    <result column="orderid" jdbcType="VARCHAR" property="orderid" />
+    <result column="price" jdbcType="DECIMAL" property="price" />
+    <result column="source" jdbcType="VARCHAR" property="source" />
+    <result column="state" jdbcType="INTEGER" property="state" />
+    <result column="created" jdbcType="TIMESTAMP" property="created" />
+    <result column="updated" jdbcType="TIMESTAMP" property="updated" />
+    <result column="platformorderid" jdbcType="VARCHAR" property="platformorderid" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, userid, typeid, orderid, price, source, state, created, updated, platformorderid
+  </sql>
+  
+  <select id="queryPaymentInfoById" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from payment_info
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+
+  <insert id="insertPaymentInfo" parameterType="com.maomi.domain.PaymentInfo"
+   useGeneratedKeys="true" keyProperty="id">
+    insert into payment_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userid != null">
+        userid,
+      </if>
+      <if test="typeid != null">
+        typeid,
+      </if>
+      <if test="orderid != null">
+        orderid,
+      </if>
+      <if test="price != null">
+        price,
+      </if>
+      <if test="source != null">
+        source,
+      </if>
+      <if test="state != null">
+        state,
+      </if>
+        created,
+        updated,
+      <if test="platformorderid != null">
+        platformorderid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userid != null">
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="typeid != null">
+        #{typeid,jdbcType=INTEGER},
+      </if>
+      <if test="orderid != null">
+        #{orderid,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null">
+        #{price,jdbcType=DECIMAL},
+      </if>
+      <if test="source != null">
+        #{source,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null">
+        #{state,jdbcType=INTEGER},
+      </if>
+      	sysdate(),
+        sysdate(),
+      <if test="platformorderid != null">
+        #{platformorderid,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  
+  <update id="updateByPrimaryKeySelective" parameterType="com.maomi.domain.PaymentInfo">
+    update payment_info
+    <set>
+      <if test="userid != null">
+        userid = #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="typeid != null">
+        typeid = #{typeid,jdbcType=INTEGER},
+      </if>
+      <if test="orderid != null">
+        orderid = #{orderid,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null">
+        price = #{price,jdbcType=DECIMAL},
+      </if>
+      <if test="source != null">
+        source = #{source,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null">
+        state = #{state,jdbcType=INTEGER},
+      </if>
+      <if test="created != null">
+        created = #{created,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updated != null">
+        updated = #{updated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="platformorderid != null">
+        platformorderid = #{platformorderid,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

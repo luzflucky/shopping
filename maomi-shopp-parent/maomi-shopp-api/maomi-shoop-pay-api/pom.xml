@@ -2,13 +2,15 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.maomi.coder</groupId>
-    <artifactId>maomi-shopp-parent</artifactId>
+    <artifactId>maomi-shopp-api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>maomi-shopp-api</artifactId>
-  <packaging>pom</packaging>
-  <modules>
-  	<module>maomi-shopp-member-api</module>
-  	<module>maomi-shoop-pay-api</module>
-  </modules>
+  <artifactId>maomi-shoop-pay-api</artifactId>
+  <dependencies>
+		<dependency>
+			<groupId>com.maomi.coder</groupId>
+			<artifactId>maomi-shopp-common</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
 </project>

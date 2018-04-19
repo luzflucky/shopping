@@ -15,6 +15,11 @@
 		</dependency>
 		<dependency>
 			<groupId>com.maomi.coder</groupId>
+			<artifactId>maomi-shoop-pay-api</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.maomi.coder</groupId>
 			<artifactId>maomi-shopp-common</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
