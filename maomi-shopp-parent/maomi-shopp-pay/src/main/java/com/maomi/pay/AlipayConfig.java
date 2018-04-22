@@ -27,10 +27,10 @@ public class AlipayConfig {
     public static String alipay_public_key = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAkbTV1BrNjhW5IGlFVaxK7+1oKuL/I1fXbF0J1yp8iSKBUaIZBoU/MA2gY7x6JT7yxqsRGHPMH8rLbu7bMyQnvnVyfntuT3uqSA3qVGlCxJ5VLKXynry1efQO2T2gRBlODjuRpQ/BdQICpG6Chy3lYhlXh1xq62L7IZBlSJcSxTHoZJm3MoyyXbZMHZ04+VJpivN2CKfjexa0i8U3wEj/0vJa9MmBSvJXCwQYNiSlcRUn0oigF3JhpPFHBs0+tba8NHczFIPo9cXRwJXB2PWzmsfqGmbx8ftANc/SOn8PjK8t1IctsBdieMMSApKm7nUwC4fFkPQbEWA42MWAVAgn9wIDAQAB";
 
 	// 服务器异步通知页面路径  需http://格式的完整路径，不能加?id=123这类自定义参数，必须外网可以正常访问
-	public static String notify_url = "http://maomicoder.s3.natapp.cc/notify_url.jsp";
+	public static String notify_url = "http://maomicoder.s3.natapp.cc/alibaba/callBack/notifyUrl";
 
 	// 页面跳转同步通知页面路径 需http://格式的完整路径，不能加?id=123这类自定义参数，必须外网可以正常访问
-	public static String return_url = "http://maomicoder.s3.natapp.cc/return_url.jsp";
+	public static String return_url = "http://maomicoder.s3.natapp.cc/alibaba/callBack/notifyUrl";
 
 	// 签名方式
 	public static String sign_type = "RSA2";

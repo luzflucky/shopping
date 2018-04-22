@@ -159,5 +159,6 @@
 		<module>maomi-shopp-message</module>
 		<module>maomi-shopp-web</module>
 		<module>maomi-shopp-pay</module>
+		<module>maomi-shoop-order</module>
 	</modules>
 </project>

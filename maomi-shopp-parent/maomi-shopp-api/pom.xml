@@ -10,5 +10,6 @@
   <modules>
   	<module>maomi-shopp-member-api</module>
   	<module>maomi-shoop-pay-api</module>
+  	<module>maomi-shoop-order-api</module>
   </modules>
 </project>

@@ -7,4 +7,8 @@ public interface PaymentInfoMapper {
     int insertPaymentInfo(PaymentInfo payInfo);
 
     PaymentInfo queryPaymentInfoById(Integer id);
+    
+    PaymentInfo queryPaymentInfoByOrderNumber(String orderNumber);
+    
+    int updatePayMentInfo(PaymentInfo payInfo);
 }

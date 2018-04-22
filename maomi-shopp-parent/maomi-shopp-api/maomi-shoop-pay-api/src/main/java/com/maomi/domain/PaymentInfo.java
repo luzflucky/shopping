@@ -27,6 +27,8 @@ public class PaymentInfo {
     private Date updated;
 
     private String platformorderid;
+    
+    private String payMessage;
 
   
 }

@@ -1,19 +1,13 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>com.maomi.coder</groupId>
-		<artifactId>maomi-shopp-parent</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
-	</parent>
-	<artifactId>maomi-shopp-pay</artifactId>
-	<dependencies>
-		<dependency>
-			<groupId>com.maomi.coder</groupId>
-			<artifactId>maomi-shoop-pay-api</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-		<dependency>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.maomi.coder</groupId>
+    <artifactId>maomi-shopp-parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>maomi-shoop-order</artifactId>
+  <dependencies>
+  	 <dependency>
 			<groupId>com.maomi.coder</groupId>
 			<artifactId>maomi-shoop-order-api</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
@@ -23,13 +17,8 @@
 			<artifactId>mybatis-spring-boot-starter</artifactId>
 			<version>1.3.0</version>
 		</dependency>
-		<dependency>
-			<groupId>com.github.1991wangliang</groupId>
-			<artifactId>alipay-sdk</artifactId>
-			<version>1.0.0</version>
-		</dependency>
-	</dependencies>
-	<build>
+  </dependencies>
+  <build>
 		<plugins>
 			<plugin>
 				<groupId>org.mybatis.generator</groupId>

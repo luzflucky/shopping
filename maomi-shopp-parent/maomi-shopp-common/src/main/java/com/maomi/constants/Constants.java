@@ -10,6 +10,10 @@ public interface Constants {
 	String HTTP_RES_CODE_200_VALUE = "success";
 	// 系统错误
 	String HTTP_RES_CODE_500_VALUE = "fial";
+	// 支付错误
+	String PAY_FIAL = "fial";
+	// 支付成功
+	String PAY_SUCCESS = "success";
 	// error
 	String ERROR = "error";
 	// token
