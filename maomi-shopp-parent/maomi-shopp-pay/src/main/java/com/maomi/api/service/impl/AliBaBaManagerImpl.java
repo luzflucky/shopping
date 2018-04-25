@@ -28,7 +28,7 @@ public class AliBaBaManagerImpl implements PayManager{
 		//付款金额，必填
 		String total_amount = String.valueOf(payInfo.getPrice());
 		//订单名称，必填
-		String subject = payInfo.getSource();
+		String subject = "测试11";
 		//商品描述，可空
 		String body = "测试订单";
 		
